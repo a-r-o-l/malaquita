@@ -7,7 +7,6 @@ interface User {
   role: string;
   password: string;
   imageUrl: string;
-  // Agrega otros campos que necesites
 }
 
 interface UserContextType {

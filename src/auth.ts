@@ -40,7 +40,9 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   },
   callbacks: {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    async jwt({ token, user }) {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    async jwt(token, user) {
       if (user) {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
@@ -55,7 +57,9 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       return token;
     },
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    async session({ session, token }) {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    async session(session, token) {
       if (token) {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
