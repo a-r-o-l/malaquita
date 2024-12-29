@@ -15,6 +15,7 @@ export const createCategory = async (data: FormData) => {
   const formData = Object.fromEntries(data.entries());
   const newCategory = new models.Category({
     name: formData.name,
+    icon: formData.icon,
   });
   await newCategory.save();
   revalidatePath("dashboard/settings/categories");

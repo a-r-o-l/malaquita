@@ -57,8 +57,8 @@ export default async function CategoriesScreen() {
                     />
                   </div>
                   <div className="flex flex-col space-y-2">
-                    <Label htmlFor="name">Icono</Label>
-                    <Select>
+                    <Label htmlFor="icon">Icono</Label>
+                    <Select name="icon">
                       <SelectTrigger>
                         <SelectValue placeholder="Selecciona un icono" />
                       </SelectTrigger>

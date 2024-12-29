@@ -19,7 +19,6 @@ export const UserProvider: React.FC<{
   user: User | undefined;
   children: React.ReactNode;
 }> = ({ user, children }) => {
-  console.log("desde context -> ", user);
   return (
     <UserContext.Provider value={{ user }}>{children}</UserContext.Provider>
   );

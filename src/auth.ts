@@ -43,8 +43,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     async jwt(token, user) {
-      console.log("token -> ", token);
-      console.log("user ->", user);
       if (user) {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
@@ -62,8 +60,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     async session(session, token) {
-      console.log("token2 -> ", token);
-      console.log("session ->", session);
       if (token) {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
