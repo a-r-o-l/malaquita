@@ -77,7 +77,7 @@ function EditAccountForm({ account }: { account: IAccount }) {
   };
 
   return (
-    <form onSubmit={onSubmit} className="flex w-full flex-col p-10 mx-auto">
+    <form onSubmit={onSubmit} className="flex w-full flex-col mt-10">
       <Card className="w-[700px] mx-auto">
         <CardHeader>
           <CardTitle>Crear usuario</CardTitle>

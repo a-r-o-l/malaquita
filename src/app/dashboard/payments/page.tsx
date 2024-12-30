@@ -13,6 +13,7 @@ import DatePicker from "@/components/DatePicker";
 import CustomersSelect from "@/components/CustomersSelect";
 import { getAllCustomers } from "@/actions/customerActions";
 import { Label } from "@/components/ui/label";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface SearchParams {
   start?: string;
@@ -42,46 +43,48 @@ export default async function CustomersScreen({
           <CardTitle>Cuentas corrientes</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="mb-5 w-full flex gap-10">
-            <div className="flex gap-4 p-4 items-center w-[300px]">
-              <Label>Fecha</Label>
+          <div className="mb-5 w-full flex flex-col gap-5 lg:flex-row">
+            <div className="flex p-4 items-center justify-between w-[400px]">
+              <Label className="w-24">Fecha</Label>
               <DatePicker url="/dashboard/payments" />
             </div>
-            <div className="flex gap-4 p-4 items-center w-[300px] justify-start">
-              <Label>Cliente</Label>
+            <div className="flex p-4 items-center justify-between w-[400px]">
+              <Label className="w-24">Cliente</Label>
               <CustomersSelect
                 url="/dashboard/payments"
                 customers={customersData}
               />
             </div>
           </div>
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableCell>Estado</TableCell>
-                <TableCell>Usuario</TableCell>
-                <TableCell>Fecha</TableCell>
-                <TableCell>Cliente</TableCell>
-                <TableCell>Total</TableCell>
-                <TableCell>Pago</TableCell>
-                <TableCell>Saldo</TableCell>
-                <TableCell align="right">Acciones</TableCell>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {currentAccounts.length ? (
-                currentAccounts.map((sale: ISaleWPop) => (
-                  <PaymentTableRow sale={sale} key={sale._id} />
-                ))
-              ) : (
+          <ScrollArea className="relative h-[400px] w-full overflow-y-auto border rounded-md">
+            <Table>
+              <TableHeader>
                 <TableRow>
-                  <TableCell colSpan={7} className="text-center h-60">
-                    No hay ventas.
-                  </TableCell>
+                  <TableCell>Estado</TableCell>
+                  <TableCell>Usuario</TableCell>
+                  <TableCell>Fecha</TableCell>
+                  <TableCell>Cliente</TableCell>
+                  <TableCell>Total</TableCell>
+                  <TableCell>Pago</TableCell>
+                  <TableCell>Saldo</TableCell>
+                  <TableCell align="right">Acciones</TableCell>
                 </TableRow>
-              )}
-            </TableBody>
-          </Table>
+              </TableHeader>
+              <TableBody>
+                {currentAccounts.length ? (
+                  currentAccounts.map((sale: ISaleWPop) => (
+                    <PaymentTableRow sale={sale} key={sale._id} />
+                  ))
+                ) : (
+                  <TableRow>
+                    <TableCell colSpan={7} className="text-center h-60">
+                      No hay ventas.
+                    </TableCell>
+                  </TableRow>
+                )}
+              </TableBody>
+            </Table>
+          </ScrollArea>
         </CardContent>
       </Card>
     </div>

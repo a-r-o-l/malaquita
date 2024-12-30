@@ -23,6 +23,7 @@ import { getAllSalesByCustomer } from "@/actions/salesActions";
 import dayjs from "dayjs";
 import { ISaleWPop } from "@/models/Sale";
 import { priceParser } from "@/functions/productsHandler";
+import BackButton from "@/app/dashboard/products/components/BackButton";
 
 async function CustomerDetailsScreen({
   params,
@@ -49,6 +50,9 @@ async function CustomerDetailsScreen({
 
   return (
     <div className="container mx-auto p-4 flex flex-col justify-center items-center">
+      <div className="flex justify-start w-1/2">
+        <BackButton url="/dashboard/settings/customers" />
+      </div>
       <Card className="w-1/2 mt-10">
         <CardHeader>
           <div className="flex justify-between">

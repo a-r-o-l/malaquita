@@ -175,7 +175,7 @@ function ProductsCard({
 
   return (
     <div className="container mx-auto p-5 py-20">
-      <div className="flex flex-col lg:flex-row gap-6">
+      <div className="flex flex-col lg:flex-row gap-4">
         <Card className="w-full lg:w-2/3">
           <CardHeader>
             <CardTitle>Productos</CardTitle>
@@ -190,31 +190,33 @@ function ProductsCard({
             </div>
           </CardHeader>
           <CardContent>
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableCell>Codigo</TableCell>
-                  <TableCell>Nombre</TableCell>
-                  <TableCell>Color</TableCell>
-                  <TableCell>Categoria</TableCell>
-                  <TableCell>Talles</TableCell>
-                  <TableCell>Stock</TableCell>
-                  <TableCell>Precio</TableCell>
-                  <TableCell></TableCell>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {filteredProducts.map((product) => {
-                  return (
-                    <ProductTableRow
-                      key={product.id}
-                      product={product}
-                      addProductToCart={addToCart}
-                    />
-                  );
-                })}
-              </TableBody>
-            </Table>
+            <ScrollArea className="relative h-[400px] w-full overflow-y-auto border rounded-md">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableCell>Codigo</TableCell>
+                    <TableCell>Nombre</TableCell>
+                    <TableCell>Color</TableCell>
+                    <TableCell>Categoria</TableCell>
+                    <TableCell>Talles</TableCell>
+                    <TableCell>Stock</TableCell>
+                    <TableCell>Precio</TableCell>
+                    <TableCell></TableCell>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {filteredProducts.map((product) => {
+                    return (
+                      <ProductTableRow
+                        key={product.id}
+                        product={product}
+                        addProductToCart={addToCart}
+                      />
+                    );
+                  })}
+                </TableBody>
+              </Table>
+            </ScrollArea>
           </CardContent>
         </Card>
 

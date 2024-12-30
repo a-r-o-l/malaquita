@@ -78,7 +78,9 @@ export default async function NewProductScreen({
                   <Image
                     src={productImage}
                     alt="Product preview"
-                    className="w-60 h-60 object-fill rounded-lg border-4 border-zinc-400"
+                    className="object-fill rounded-lg border-4 border-zinc-400"
+                    width={160}
+                    height={160}
                   />
                 ) : (
                   <div className="flex flex-col justify-center text-center w-60 h-60 rounded-lg border-4 border-zinc-400">

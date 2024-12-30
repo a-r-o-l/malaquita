@@ -12,7 +12,7 @@ function ProductTable({ products }: { products: PartialProduct[] }) {
   }
   return (
     <Table>
-      <TableHeader>
+      <TableHeader className="sticky top-0 z-10">
         <TableRow>
           <TableHead align="left">Imagen</TableHead>
           <TableHead>Codigo</TableHead>

@@ -46,7 +46,7 @@ export default async function NewProductScreen({
 
   return (
     <div className="container mx-auto p-4 flex flex-col justify-center items-center">
-      <div className="w-full flex justify-start">
+      <div className="w-1/2 flex justify-start">
         <BackButton url="/dashboard/sales" />
       </div>
       <Card className="w-1/2 mt-10">

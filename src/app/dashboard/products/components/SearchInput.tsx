@@ -33,6 +33,7 @@ function SearchInput() {
         placeholder="Buscar producto"
         value={searchQuery}
         onInput={(e) => setSearchQuery(e.currentTarget.value)}
+        autoComplete="off"
       />
       {searchQuery === "" ? (
         <Search className="absolute top-1/2 right-2 transform -translate-y-1/2 text-muted-foreground w-4" />

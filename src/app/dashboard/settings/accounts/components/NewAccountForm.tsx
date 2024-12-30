@@ -68,10 +68,10 @@ function NewAccountForm() {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <Card className="w-4/5">
+    <form onSubmit={onSubmit} className="w-[400]">
+      <Card>
         <CardHeader>
-          <CardTitle>Crear usuario</CardTitle>
+          <CardTitle>Nuevo usuario</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid w-full items-center gap-5">
@@ -90,6 +90,7 @@ function NewAccountForm() {
                 name="username"
                 value={username}
                 onChange={(e) => setUserName(e.target.value)}
+                autoComplete="off"
               />
             </div>
             <div className="flex flex-col space-y-2">
@@ -100,6 +101,7 @@ function NewAccountForm() {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                autoComplete="off"
               />
             </div>
             <div className="flex flex-col space-y-2">
